@@ -7,15 +7,20 @@
 
 :root {
     --main-font: "Space Mono";
+    --clr-neutral-light: rgb(242, 242, 242);
+    --clr-neutral-dark: #343434;
+    --clr-accent-muted: rgb(197, 170, 249);
+    --clr-accent-bright: rgb(171, 248, 192);
 }
 
 body {
-    background-color: rgb(197, 170, 249);
+    background-color: var(--clr-accent-muted);
     height: 100vh;
 
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .main {
@@ -25,14 +30,14 @@ body {
 }
 
 .welc {
-    background-color: rgb(242, 242, 242);
+    background-color: var(--clr-neutral-light);
     padding:0.5rem;
     padding-left:1rem;
     padding-right:0.4rem;
     padding-bottom:0.5rem;
     padding-top:0rem;
     display:inline-block;
-    border: 0.2rem solid #343434;
+    border: 0.2rem solid var(--clr-neutral-dark);
     text-transform: none;
     font-weight:700;
 }
@@ -40,7 +45,7 @@ body {
 .welc span {
     text-decoration-line: underline;
     text-decoration-style: wavy;
-    text-decoration-color: rgb(171, 248, 192);
+    text-decoration-color: var(--clr-accent-bright);
     text-decoration-thickness: 0.15rem;
     text-underline-offset: 3.5rem;
 }
@@ -107,6 +112,21 @@ body {
         bottom: 44vh;
         right:23vw;
     }
+}
+
+.welc-options {
+    display:block;
+    margin: 3rem;
+    padding: 3rem;
+    background-color: var(--clr-neutral-light);
+    border:0.35rem solid var(--clr-neutral-dark);
+
+    font-family: var(--main-font);
+    font-size:3rem;
+}
+
+.welc-options span {
+    display: block;
 }
 
 
