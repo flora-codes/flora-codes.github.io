@@ -42,7 +42,7 @@ body {
     text-decoration-style: wavy;
     text-decoration-color: rgb(171, 248, 192);
     text-decoration-thickness: 0.15rem;
-    text-underline-offset: 2.2rem;
+    text-underline-offset: 2.5rem;
 }
 
 .welc flckr {
@@ -71,12 +71,65 @@ body {
     }
 }
 
+.welc::after {
+    content: '';
+    background-image: url(http://dl.dropbox.com/s/p78kvf64exiwuuv/White-Pixel-Mouse-Cursor-Arow-Fixed.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 0vh;
+    right: 0vw;
+    width:3.2rem;
+    height:5rem;
+    visibility: hidden;
 
-@media only screen and (min-width:768px){
+    animation-name: click;
+    animation-duration:3s;
+    animation-iteration-count: 1;
+    animation-delay: 1.5s;
+}
+
+@keyframes click {
+    0% {
+        visibility: visible;
+        bottom: 0vh;
+        right: 0vw;
+    }
+    70% {
+        bottom: 44vh;
+        right:23vw;
+    }
+    100% {
+        bottom: 44vh;
+        right:23vw;
+    }
+}
+
+
+@media only screen and (min-width:1080px){
     .main { 
         font-size:2.5rem;
     }
+    .welc span {
+        text-underline-offset: 2.2rem;
+    }
     .welc flckr {
         font-size:2.7rem;
+    }
+
+    @keyframes click {
+        0% {
+            visibility: visible;
+            bottom: 0vh;
+            right: 0vw;
+        }
+        70% {
+            bottom: 39vh;
+            right:37vw;
+        }
+        100% {
+            bottom: 39vh;
+            right:37vw;
+        }
     }
 }
