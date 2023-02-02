@@ -79,9 +79,8 @@ body {
     position: absolute;
     bottom: 0vh;
     right: 0vw;
-    width:3.2rem;
-    height:5rem;
-    visibility: hidden;
+    width:0rem;
+    height:0rem;
 
     animation-name: click;
     animation-duration:3s;
@@ -91,15 +90,20 @@ body {
 
 @keyframes click {
     0% {
-        visibility: visible;
+        width:3.2rem;
+        height:5rem;
         bottom: 0vh;
         right: 0vw;
     }
     70% {
+        width:3.2rem;
+        height:5rem;
         bottom: 44vh;
         right:23vw;
     }
     100% {
+        width:3.2rem;
+        height:5rem;
         bottom: 44vh;
         right:23vw;
     }
@@ -119,15 +123,20 @@ body {
 
     @keyframes click {
         0% {
-            visibility: visible;
+            width:3.2rem;
+            height:5rem;
             bottom: 0vh;
             right: 0vw;
         }
         70% {
+            width:3.2rem;
+            height:5rem;
             bottom: 39vh;
             right:37vw;
         }
         100% {
+            width:3.2rem;
+            height:5rem;
             bottom: 39vh;
             right:37vw;
         }
