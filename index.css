@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*, *::before, *::after { 
+    margin: 0; 
+    box-sizing: border-box;
+}
+
+:root {
+    --main-font: "Space Mono";
+}
+
+body {
+    background-color: rgb(197, 170, 249);
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    font-family: var(--main-font);
+    text-transform: lowercase;
+    font-size:2.5rem;
+}
+
+.welc {
+    background-color: rgb(242, 242, 242);
+    padding:0.5rem;
+    padding-left:1rem;
+    padding-right:0.4rem;
+    padding-bottom:0.5rem;
+    padding-top:0rem;
+    display:inline-block;
+    border: 0.2rem solid #343434;
+    text-transform: none;
+    font-weight:700;
+}
+
+.welc span {
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: rgb(171, 248, 192);
+    text-decoration-thickness: 0.15rem;
+    text-underline-offset: 2.2rem;
+}
+
+.welc flckr {
+    font-size:2.7rem;
+    font-weight:100;
+    margin-left:-0.4rem;
+
+    animation-name: flicker;
+    animation-duration:1.2s;
+    animation-iteration-count: infinite;
+    animation-direction:normal;
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 100%;
+    }
+    47% {
+        opacity: 1;
+    }
+    53% {
+        opacity:0;
+    }
+    100% {
+        opacity:0;
+    }
+}
