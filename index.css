@@ -21,7 +21,7 @@ body {
 .main {
     font-family: var(--main-font);
     text-transform: lowercase;
-    font-size:3rem;
+    font-size:5rem;
 }
 
 .welc {
@@ -42,11 +42,11 @@ body {
     text-decoration-style: wavy;
     text-decoration-color: rgb(171, 248, 192);
     text-decoration-thickness: 0.15rem;
-    text-underline-offset: 2.5rem;
+    text-underline-offset: 3.5rem;
 }
 
 .welc flckr {
-    font-size:3.2rem;
+    font-size:5.2rem;
     font-weight:100;
     margin-left:-0.4rem;
 
