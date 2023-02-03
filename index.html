@@ -27,7 +27,15 @@
                 $(".temp-hov").removeClass("welc-triangle-hover");
             });
 
-          }); 
+            $(".linkholder").children("a:first-of-type").focus(
+                function() {
+                    $(".temp-hov").addClass("welc-triangle-hover");
+                }
+            )
+            $(".linkholder").focusout(function(){
+                $(".temp-hov").removeClass("welc-triangle-hover");
+            });
+        });
     </script>
 </footer>
 </html>
