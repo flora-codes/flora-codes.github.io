@@ -5,6 +5,14 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover, a:focus, a:focus-visible, a:active {
+    outline: none;
+}
+
 :root {
     --main-font: "Space Mono";
     --clr-neutral-light: rgb(242, 242, 242);
@@ -16,6 +24,8 @@
 body {
     background-color: var(--clr-accent-muted);
     height: 100vh;
+    max-width:100vw;
+    overflow: hidden;
 
     display: flex;
     align-items: center;
@@ -37,7 +47,7 @@ body {
     padding-bottom:0.5rem;
     padding-top:0rem;
     display:inline-block;
-    border: 0.2rem solid var(--clr-neutral-dark);
+    border: 0.35rem solid var(--clr-neutral-dark);
     text-transform: none;
     font-weight:700;
 }
@@ -82,57 +92,123 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
-    bottom: 0vh;
-    right: 0vw;
-    width:0rem;
-    height:0rem;
+    margin-top:2vh;
+    margin-left:-1.5vw;
+    opacity: 0;
+    
+    width: 3.2rem;
+    height: 5rem;
 
     animation-name: click;
-    animation-duration:3s;
+    animation-duration:2s;
     animation-iteration-count: 1;
-    animation-delay: 1.5s;
+    animation-delay: 0.5s;
+    animation-direction: reverse;
+    animation-timing-function: linear;
 }
 
 @keyframes click {
     0% {
-        width:3.2rem;
-        height:5rem;
-        bottom: 0vh;
-        right: 0vw;
+        opacity:0;
     }
-    70% {
-        width:3.2rem;
-        height:5rem;
-        bottom: 44vh;
-        right:23vw;
+    1% {
+        opacity:1;
+    }
+    50% {
+        opacity:1;
+        transform:translate(0,0);
     }
     100% {
-        width:3.2rem;
-        height:5rem;
-        bottom: 44vh;
-        right:23vw;
+        opacity: 1;
+        transform:translate(20vw, 20vh);
     }
+}
+
+.welc-triangle {
+    margin-left: calc(100% - 6rem);
+
+    width: 3.3rem;
+    height:3.3rem;
+    background-image:
+      linear-gradient(to bottom right, transparent 50%, var(--clr-neutral-dark) 0),
+      linear-gradient(to top right, var(--clr-neutral-dark) 50%, transparent 0);
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+    background-position: left, right;
+}
+
+.welc-triangle::after {
+    content:'';
+    position:absolute;
+    margin-top:0.7rem;
+    margin-left:0.15rem;
+
+    width: 3rem;
+    height:3rem;
+    background-image:
+      linear-gradient(to bottom right, transparent 50%, var(--clr-neutral-light) 0),
+      linear-gradient(to top right, var(--clr-neutral-light) 50%, transparent 0);
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+    background-position: left, right; 
 }
 
 .welc-options {
     display:block;
-    margin: 3rem;
-    padding: 3rem;
-    background-color: var(--clr-neutral-light);
-    border:0.35rem solid var(--clr-neutral-dark);
+    margin-top: 2.5rem;
 
     font-family: var(--main-font);
     font-size:3rem;
 }
 
-.welc-options span {
+.welc-options a {
+    background-color: var(--clr-neutral-light);
     display: block;
+    padding-bottom:1rem;
+    padding-top:1rem;
+    padding-left: 2rem;
+    padding-right:2rem;
+    border: 0.35rem solid var(--clr-neutral-dark);
+}
+.welc-options a:not(:first-of-type) {
+    border-top: 0rem solid var(--clr-neutral-dark);
 }
 
+.welc-options a:hover,
+a:active, 
+a:focus, 
+a:focus-visible {
+    background-color: var(--clr-accent-bright);
+}
+
+.welc-options {
+    visibility: hidden;
+    animation-name: menu;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+.linkholder {
+    box-shadow: 1rem 1rem var(--clr-neutral-dark);
+}
+
+@keyframes menu {
+    0% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+    }
+}
 
 @media only screen and (min-width:1080px){
     .main { 
         font-size:2.5rem;
+    }
+    .welc {
+        border: 0.2rem solid var(--clr-neutral-dark);
     }
     .welc span {
         text-underline-offset: 2.2rem;
@@ -140,25 +216,73 @@ body {
     .welc flckr {
         font-size:2.7rem;
     }
-
+    .welc::after {
+        margin-left:-0.5vw;
+        margin-top:3vh;
+        animation-duration:2.5s;
+    }
     @keyframes click {
         0% {
-            width:3.2rem;
-            height:5rem;
-            bottom: 0vh;
-            right: 0vw;
+            opacity:0;
         }
-        70% {
-            width:3.2rem;
-            height:5rem;
-            bottom: 39vh;
-            right:37vw;
+        1% {
+            opacity:1;
+        }
+        50% {
+            opacity:1;
+            transform:translate(0,0);
         }
         100% {
-            width:3.2rem;
-            height:5rem;
-            bottom: 39vh;
-            right:37vw;
+            opacity: 1;
+            transform:translate(50vw, 50vh);
         }
+    }
+    .welc-triangle {
+        width:3rem;
+        height: 3rem;
+    }
+    .welc-triangle::before {
+        margin-top:0.4rem;
+        margin-left:0rem;
+    }
+    .welc-triangle::after {
+        margin-top:0.4rem;
+        margin-left:0rem;
+    }
+    
+    .welc-triangle-hover {
+        margin-top:-2rem;
+        margin-left: calc(100% - 6rem + 0.15rem);
+        position:relative;
+        display:block;
+
+        width: 3rem;
+        height:2rem;
+    }
+    .welc-triangle-hover::after {
+        content:'';
+        position:absolute;
+        margin-top:-0.6rem;
+        margin-left:-0.15rem;
+
+        width: 3rem;
+        height: 3rem;
+        background-image:
+        linear-gradient(to bottom right, transparent 50%, var(--clr-accent-bright) 0),
+        linear-gradient(to top right, var(--clr-accent-bright) 50%, transparent 0);
+        background-size: 50% 100%;
+        background-repeat: no-repeat;
+        background-position: left, right; 
+    }
+    .welc-options {
+        font-size: 2rem;
+        margin-top: 1.5rem;
+        animation-delay: 2.3s;
+    }
+    .welc-options a {
+        border: 0.2rem solid var(--clr-neutral-dark);
+    }
+    .welc-options a:not(:first-of-type) {
+        border-top: 0rem solid var(--clr-neutral-dark);
     }
 }

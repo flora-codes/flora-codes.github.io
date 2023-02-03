@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <head>
 <link rel="stylesheet" href="index.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 <html>
 <body>
-<div class="main">Hello, I'm <div class="welc"><span>Virag</span><flckr>|</flckr></div></div>
+<div class="main">Hello, I'm <div class="welc" onload="cursorClick()"><span class="nametag">Virag</span><flckr>|</flckr></div></div>
 <div class="welc-options">
-    <span>storyteller</span>
-    <span>graphic designer</span>
-    <span>front-end developer</span>
+    <div class="welc-triangle"></div>
+    <div class="temp-hov"></div>
+    <div class="linkholder">
+        <a href=""><span>storyteller</span></a>
+        <a href=""><span>graphic designer</span></a>
+        <a href=""><span>front-end developer</span></a>
+    </div> 
 </div>
 </body>
 <footer>
+    <script>
+        $(document).ready(function(){
+        
+            $(".linkholder").children("a:first-of-type").hover(
+                function() {
+                    $(".temp-hov").addClass("welc-triangle-hover");
+                }, function() {
+                $(".temp-hov").removeClass("welc-triangle-hover");
+            });
+
+          }); 
+    </script>
 </footer>
 </html>
