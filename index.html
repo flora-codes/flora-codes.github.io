@@ -32,9 +32,20 @@
                     $(".temp-hov").addClass("welc-triangle-hover");
                 }
             )
-            $(".linkholder").focusout(function(){
+            $(".linkholder").children("a:first-of-type").focusout(function(){
                 $(".temp-hov").removeClass("welc-triangle-hover");
             });
+
+            function touchStart() {
+                if ( $(".linkholder").children("a:first-of-type") == true) {
+                    $(".temp-hov").addClass("welc-triangle-hover");
+                }
+            }
+            function touchEnd() {
+                if ( $(".linkholder").children("a:first-of-type") == true) {
+                    $(".temp-hov").removeClass("welc-triangle-hover");
+                }
+            }
         });
     </script>
 </footer>
