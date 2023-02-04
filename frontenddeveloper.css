@@ -221,6 +221,10 @@ body {
     }
 }
 
+.nametag {
+    font-size: 4rem;
+}
+
 .welc {
     animation-name: shadowed;
     animation-duration: 1.5s;
@@ -288,5 +292,9 @@ body {
             transform-origin: center;
             transform: translateY(-250%);
         }
+    }
+
+    .nametag{
+        font-size: 2.5rem;
     }
 }
