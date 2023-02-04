@@ -7,7 +7,7 @@
 </head>
 <html>
 <body>
-<div class="main">Hello, I'm <div class="welc"><span class="nametag">Virag</span><flckr>|</flckr></div></div>
+<div class="main"><ttl>Hello, I'm</ttl> <div class="welc"><span class="nametag">Virag</span><flckr>|</flckr></div></div>
 <div class="welc-options">
     <div class="welc-triangle"></div>
     <div class="temp-hov"></div>
@@ -40,6 +40,7 @@
                     $(".nametag").text(string);
                 }, index * int)
             });
+            $("ttl").text("hello, i'm a");
         };
 
         $(document).ready(function(){
