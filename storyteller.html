@@ -7,7 +7,7 @@
 </head>
 <html>
 <body>
-<div class="main">Hello, I'm <div class="welc" ontouchstart="touchStart()" ontouchend="touchEnd()"><span class="nametag">Virag</span><flckr>|</flckr></div></div>
+<div class="main">Hello, I'm <div class="welc"><span class="nametag">Virag</span><flckr>|</flckr></div></div>
 <div class="welc-options">
     <div class="welc-triangle"></div>
     <div class="temp-hov"></div>
@@ -20,9 +20,36 @@
 </body>
 <footer>
     <script>
+        function timeOut(arr, int, st) {
+            setTimeout(nameClear, 3000, arr, int);
+            setTimeout(stWrite, 4000, st, int);
+        };
+
+        function nameClear(arr, int) {
+            arr.forEach(function(string, index) {
+                setTimeout(function() {
+                    $(".nametag").text(string);
+                }, index * int)
+            });
+        };
+
+        function stWrite(st, int) {
+            st.forEach(function(string, index) {
+                setTimeout(function() {
+                    $(".nametag").text(string);
+                }, index * int)
+            });
+        };
+
         $(document).ready(function(){
-        
+            var name = ["Vira", "Vir", "Vi", "V", ""];
+            var st = ["s", "st", "sto", "stor", "story", "storyt", "storyte", "storytel", "storytell", "storytelle", "storyteller"];
+            var interval = 120;
+
+            timeOut(name, interval, st);
         })
+
+
     </script>
 </footer>
 </html>

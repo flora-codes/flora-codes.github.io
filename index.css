@@ -50,6 +50,7 @@ body {
     border: 0.35rem solid var(--clr-neutral-dark);
     text-transform: none;
     font-weight:700;
+    margin-top:2rem;
 }
 
 .welc span {
