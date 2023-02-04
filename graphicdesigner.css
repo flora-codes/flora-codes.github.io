@@ -145,10 +145,10 @@ body {
     animation-duration:1.5s;
     animation-fill-mode: forwards;
 }
-.gd {
+.st {
     animation-delay: 1s;
 }
-.st {
+.gd {
     animation-delay: 5.5s;
     animation-duration: 2s;
     animation-timing-function: ease-out;
@@ -170,7 +170,6 @@ body {
         height: 0;
         padding-top:0;
         padding-bottom:0;
-        border-top: 0rem;
         border-bottom:0rem;
         color:rgba(255, 255, 255, 0);
     }
