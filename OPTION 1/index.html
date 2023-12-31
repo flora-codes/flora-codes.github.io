@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="index.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<title>flora codes</title>
+</head>
+<html>
+<body>
+<div class="main">Hello, I'm <div class="welc" ontouchstart="touchStart()" ontouchend="touchEnd()"><span class="nametag">Virag</span><flckr>|</flckr></div></div>
+<div class="welc-options">
+    <div class="welc-triangle"></div>
+    <div class="temp-hov"></div>
+    <div class="linkholder">
+        <a href="storyteller.html"><span>storyteller</span></a>
+        <a href="graphicdesigner.html"><span>graphic designer</span></a>
+        <a href="frontenddeveloper.html"><span>front-end developer</span></a>
+    </div> 
+</div>
+</body>
+<footer>
+    <script>
+        $(document).ready(function(){
+        
+            $(".linkholder").children("a:first-of-type").hover(
+                function() {
+                    $(".temp-hov").addClass("welc-triangle-hover");
+                }, function() {
+                $(".temp-hov").removeClass("welc-triangle-hover");
+            });
+
+            $(".linkholder").children("a:first-of-type").focus(
+                function() {
+                    $(".temp-hov").addClass("welc-triangle-hover");
+                }
+            )
+            $(".linkholder").children("a:first-of-type").focusout(function(){
+                $(".temp-hov").removeClass("welc-triangle-hover");
+            });
+
+            function touchStart() {
+                if ( $(".linkholder").children("a:first-of-type") == true) {
+                    $(".temp-hov").addClass("welc-triangle-hover");
+                }
+            }
+            function touchEnd() {
+                if ( $(".linkholder").children("a:first-of-type") == true) {
+                    $(".temp-hov").removeClass("welc-triangle-hover");
+                }
+            }
+        });
+    </script>
+</footer>
+</html>
