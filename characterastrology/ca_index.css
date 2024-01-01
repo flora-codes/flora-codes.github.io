@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --clr-dark: rgb(14, 3, 69);
+    --clr-light: rgb(255, 255, 255);
+    --clr-accent: rgb(253, 247, 170);
+    --clr-accent-bright: rgb(255, 110, 110);
+
+    --sans: 'Josefin Sans', sans-serif;
+    --mono: 'Space Mono', monospace;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow: hidden;
+}
+a {
+    text-decoration: none;
+    color: var(--clr-accent);
+    position: relative;
+}
+a::before {
+   content:'';
+   height:1px;
+   width:0; 
+   position: absolute;
+   bottom:-3px;
+   background-color: var(--clr-accent);
+   transition: width 0.7s;
+}
+a:hover::before {
+    width: 100%;
+    transition: width 0.7s;
+}
+h1 {
+    font-family: var(--sans);
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--clr-light);
+    font-size: 3.5rem;
+    margin: 0;
+}
+h2 {
+    font-family: var(--sans);
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--clr-accent);
+    font-size: 2rem;
+    margin: 0;
+}
+h3 {
+    font-family: var(--sans);
+    font-weight: 200;
+    color: var(--clr-light);
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+b {
+    font-weight:700;
+}
+.bdr {
+    border: 1px solid var(--clr-accent-bright);
+    border-radius:0.3rem;
+    box-shadow: 0.4rem 0.4rem var(--clr-accent-bright);
+    padding: 1.5rem;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    margin: 0.5rem;
+    color: var(--clr-light);
+}
+.maincont {
+    width: 100%;
+    height: 100%;
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    font-family: var(--sans);
+    font-size: 1rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+mainchoice {
+    display: none;
+    width: auto;
+    height: auto;
+    grid-template-rows: 50% 50%;
+    gap: 50px;
+}
+.mainbutton {
+    width: max-content;
+    font-size: 1.5rem;
+    align-self: center;
+    justify-self: center;
+    position: relative;
+    z-index:1;
+}
+.mainbutton::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0;
+    background-color: var(--clr-accent-bright);
+    left: 0;
+    bottom:0;
+    right: 0;
+    z-index: -1;
+    border-radius: 0.3rem;
+    transition: 
+        height 0.5s,
+        color 0.5s;
+}
+.mainbutton:hover::before {
+    height: 100%;
+    transition: height 0.5s;
+}
+.mainbutton:hover {
+    color: var(--clr-dark);
+    transition: color 0.5s;
+
+    cursor: pointer;
+}
+#characterchoice {
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+}
+#chartchoice {
+    display: none;
+}
+
+
+/******** SEARCHBAR ********/
+
+.ui-autocomplete {
+    margin-top: 50px;
+    font-family: var(--sans) !important;
+    font-size: 1.5rem !important;
+    text-transform: lowercase;
+    background: transparent !important;
+    border: 0px !important;
+}
+.ui-autocomplete-input {
+    background: transparent;
+    color: var(--clr-light);
+    font-family: var(--sans) !important;
+    font-size: 1.5rem !important;
+    text-transform: lowercase;
+}
+.ui-autocomplete-input::selection {
+    border: none !important;
+}
+.ui-widget {
+    height: 50%;
+}
+ul {
+    height: 50%;
+    width: min-content;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+li {
+    border: 1px solid var(--clr-accent-bright);
+    width: min-content;
+    display: inline-block;
+    margin: 10px !important;
+    border-radius: 0.3rem;
+    padding: 5px !important;
+    color: var(--clr-accent-bright);
+    position: relative;
+}
+li::before {
+    content:'';
+    width: 0;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: var(--clr-accent-bright);
+    color:var(--clr-light);
+    border-radius: 0.3rem;
+    transform: width 0.5s;
+}
+li:hover::before {
+    width: 100%;
+    transform: width 0.5s;
+}
+.ui-menu, .ui-widget, .ui-widget-content, .ui-autocomplete, .ui-front {
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+}
+#ui-id-1 {
+    margin-top: 50px !important;
+}
+.ui-menu-item-wrapper {
+    text-align: center;
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+	border: none !important;
+	background: transparent !important;
+	font-weight: normal;
+	color: var(--clr-accent-bright) !important;
+}
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+	color: #ffffff !important;
+	text-decoration: none;
+}
+
+
+/******** .ui-widget {
+    font-family: var(--sans) ! important;
+    text-transform: lowercase;
+}
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
+    font-family: var(--sans) ! important;
+    text-transform: lowercase;
+    font-size: 1.5rem;
+    color: var(--clr-light);
+    background: transparent;
+    margin-top: 50px;
+} 
+.ui-menu .ui-menu-item-wrapper {
+    position: relative;
+    padding: 3px 1em 3px .4em;
+}
+.ui-menu .ui-menu-item {
+    cursor: pointer;
+    list-style-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+}
+.ui-widget-content {
+    color: var(--clr-light);
+    border: 1px solid var(--clr-accent);
+}
+.ui-menu {
+    list-style: none;
+    list-style-image: none;
+}
+.ui-menu-item-wrapper {
+
+}
+.ui-helper-hidden {
+    display: none;
+}
+.ui-helper-hidden-accessible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.ui-menu, .ui-widget, .ui-widget-content, .ui-autocomplete, .ui-front {
+    list-style: none;
+	padding: 0;
+	margin: 0;
+	display: block;
+	outline: 0;
+    width: 50%;
+}
+.ui-menu-item {
+}
+.ui-autocomplete-input {
+}
+ul {
+    width: 100% !important;
+}
+li {
+    border: 1px solid var(--clr-accent);
+    
+}
+*******/

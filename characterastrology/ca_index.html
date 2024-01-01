@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="ca_index.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>	
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <!-- SCRIPT YSOURCE https://api.jqueryui.com/menu/#method-focus -->
+
+</head>
+<body>
+    <div class="maincont">
+
+        <mainchoice id="mc">
+            <div class="mainbutton bdr" onclick="location.href='characterchoice/characterchoice.html'">i want to create a character based on zodiac</div>
+            <div class="mainbutton bdr" onclick="chartInit()">i want to find a character's birth chart</div>
+        </mainchoice>
+
+        <div id="characterchoice">
+            <div class="ui-widget">
+                <label for="tags"></label>
+                <input id="tags" class="bdr" size="50">
+            </div>            
+        </div>
+        <div id="chartchoice">
+            
+        </div>
+    </div>
+</body>
+<footer>
+    <script>
+        document.querySelector("#mc").style.display = "flex";
+        document.querySelector("#characterchoice").style.display = "none";
+        document.querySelector("#chartchoice").style.display = "none";
+    </script>
+    <script src="charast.js"></script>
+</footer>
+</html>
